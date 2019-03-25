@@ -1,5 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Based on Weather Finder Youtube tutorial by [Hamza Mirza](https://www.youtube.com/watch?v=204C9yNeOYI)
+
 ## Available Scripts
 
 In the project directory, you can run:
