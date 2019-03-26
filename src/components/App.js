@@ -3,6 +3,9 @@ import Titles from './Titles';
 import Form from './Form';
 import Weather from './Weather';
 
+import DayIMG from './../img/daytime.jpg';
+import NightIMG from './../img/nighttime.jpg';
+
 const API_KEY ="b231f5b35c36c9a43ede24332afda924";
 
 
@@ -59,19 +62,40 @@ class App extends React.Component
 	}
 
 	render()
-	{
+	{	
+		const currentHour = new Date().getHours();
+		let currentBG;
+
+		if (currentHour < 20)
+		{
+			currentBG =  `url(${DayIMG})`
+		} else {
+			currentBG =  `url(${NightIMG})`
+		}
+
+		console.log(currentBG);
+
 		return(
-			<div className="ui container">
-				<Titles />
-				<Form getWeather={this.getWeather} />
-				<Weather 
-					temperature={this.state.tempature} 
-					city={this.state.city}
-					country={this.state.country}
-					humidity={this.state.humidity}
-					description={this.state.description}
-					error={this.state.error}
-				/>
+			<div className="wrapper">
+				<div className="container">
+					<div className="row">
+						<div className="col-12 col-md-6 col-lg-6 title-container" style={{ backgroundImage: currentBG }} >				
+							<Titles/>
+						</div>						
+						
+						<div className="col-12 col-md-6 col-lg-6 form-container">
+							<Form getWeather={this.getWeather} />
+							<Weather 
+								temperature={this.state.tempature} 
+								city={this.state.city}
+								country={this.state.country}
+								humidity={this.state.humidity}
+								description={this.state.description}
+								error={this.state.error}
+							/>
+						</div>
+					</div>
+				</div>
 			</div>
 		)
 	}
