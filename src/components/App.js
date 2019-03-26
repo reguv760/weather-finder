@@ -46,8 +46,9 @@ class App extends React.Component
 				country: data.sys.country,
 				humidity: data.main.humidity,
 				description: data.weather[0].description,
-			});
-		} else 
+				error: undefined,
+			});		
+		} else
 		{
 			this.setState({
 				temp: undefined,
@@ -64,36 +65,37 @@ class App extends React.Component
 	render()
 	{	
 		const currentHour = new Date().getHours();
+		let titleTextColor;
 		let currentBG;
 
-		if (currentHour < 20)
+		if (currentHour < 19)
 		{
-			currentBG =  `url(${DayIMG})`
+			currentBG = `url(${DayIMG})`;
+			titleTextColor = `#000`;
 		} else {
-			currentBG =  `url(${NightIMG})`
+			currentBG = `url(${NightIMG})`;
+			titleTextColor = `#fff`;
 		}
 
-		console.log(currentBG);
+		//console.log(currentBG);
 
 		return(
 			<div className="wrapper">
-				<div className="container">
-					<div className="row">
-						<div className="col-12 col-md-6 col-lg-6 title-container" style={{ backgroundImage: currentBG }} >				
-							<Titles/>
-						</div>						
-						
-						<div className="col-12 col-md-6 col-lg-6 form-container">
-							<Form getWeather={this.getWeather} />
-							<Weather 
-								temperature={this.state.tempature} 
-								city={this.state.city}
-								country={this.state.country}
-								humidity={this.state.humidity}
-								description={this.state.description}
-								error={this.state.error}
-							/>
-						</div>
+				<div className="row">
+					<div className="col-12 col-md-7 col-lg-7 title-container" style={{ backgroundImage: currentBG, color: titleTextColor}} >				
+						<Titles/>
+					</div>						
+					
+					<div className="col-12 col-md-5 col-lg-5 form-container">
+						<Form getWeather={this.getWeather} />
+						<Weather 
+							temperature={this.state.tempature} 
+							city={this.state.city}
+							country={this.state.country}
+							humidity={this.state.humidity}
+							description={this.state.description}
+							error={this.state.error}
+						/>
 					</div>
 				</div>
 			</div>
