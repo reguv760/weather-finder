@@ -12,23 +12,23 @@ self.__precacheManifest = [
     "url": "/weather-finder/static/js/runtime~main.a4583ac8.js"
   },
   {
-    "revision": "c99f41055c60107c41c2",
-    "url": "/weather-finder/static/js/main.2b781701.chunk.js"
+    "revision": "71bd6607bbb49d9f81a4",
+    "url": "/weather-finder/static/js/main.b7caf8ac.chunk.js"
   },
   {
     "revision": "9a2acaaafc9e36d2b040",
     "url": "/weather-finder/static/js/2.9d78c24b.chunk.js"
   },
   {
-    "revision": "c99f41055c60107c41c2",
-    "url": "/weather-finder/static/css/main.bae8927c.chunk.css"
+    "revision": "71bd6607bbb49d9f81a4",
+    "url": "/weather-finder/static/css/main.b79d1893.chunk.css"
   },
   {
     "revision": "9a2acaaafc9e36d2b040",
     "url": "/weather-finder/static/css/2.4fbdb43d.chunk.css"
   },
   {
-    "revision": "e51c174249ebf4b0e25afcec6f262703",
+    "revision": "d41d4673ea18f1580edb25ffeddcff02",
     "url": "/weather-finder/index.html"
   }
 ];
