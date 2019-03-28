@@ -1,0 +1,30 @@
+.weather__info {
+  width: 60%;
+  font-size: 1rem;
+  font-weight: 200;
+  letter-spacing: 0.2em;
+
+  & .weather__key {
+    color: $hotOrange;
+    border-bottom: solid 2px $opaqueBlack;
+    padding: 1.4rem 0;
+    font-weight: 400;
+  }
+
+  & .weather__key:last-child {
+    border: 0;
+  }
+
+  & .weather__value {
+    display: inline-block;
+    color: #fff;
+    font-weight: 200;
+  }
+
+  & .weather__error {
+    color: $hotOrange;
+    font-size: 1.2rem;
+    letter-spacing: 0.1em;
+    font-weight: 200;
+  }
+}
