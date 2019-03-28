@@ -1,7 +1,6 @@
 import React from 'react';
 
-{ /* getWeather is inhereted from App.js 
-	as props into child component */ }
+// getWeather is inhereted from App.js as props into child component
 const Form = props =>		
 (
 	<div className="weather-form">

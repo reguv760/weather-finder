@@ -25,18 +25,17 @@ class App extends React.Component
 	{
 		e.preventDefault();
 
-		{ /* elements.name.<attribute>.value 
-			grabs input value in Form.js */ }
+		// elements.name.<attribute>.value 
+		// grabs input value in Form.js
 
 		const city = e.target.elements.city.value;
 		const country = e.target.elements.country.value;
 
-		{ /* call api with api_key */ }
+		// call api with api_key
 		const api_call = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}`);
 
-		{ /* retrieve data after making an api call */ }
+		// retrieve data after making an api call
 		const data = await api_call.json();
-
 
 		if (city && country)
 		{
@@ -46,6 +45,7 @@ class App extends React.Component
 				country: data.sys.country,
 				humidity: data.main.humidity,
 				description: data.weather[0].description,
+				icon: data.weather[0].icon,
 				error: undefined,
 			});		
 		} else
@@ -56,6 +56,7 @@ class App extends React.Component
 				country: undefined,
 				humidity: undefined,
 				description: undefined,
+				icon: undefined,
 				error: "Please enter your location",
 			})
 		}
@@ -94,6 +95,7 @@ class App extends React.Component
 							country={this.state.country}
 							humidity={this.state.humidity}
 							description={this.state.description}
+							icon={this.state.icon}
 							error={this.state.error}
 						/>
 					</div>
