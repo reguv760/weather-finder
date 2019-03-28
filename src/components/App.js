@@ -1,15 +1,12 @@
 import React from 'react';
 import DotEnv from 'dotenv';
 
-
 import Titles from './Titles';
 import Form from './Form';
 import Weather from './Weather';
 
 import DayIMG from './../img/daytime.jpg';
 import NightIMG from './../img/nighttime.jpg';
-
-//const API_KEY ="b231f5b35c36c9a43ede24332afda924";
 
 
 class App extends React.Component
@@ -68,7 +65,6 @@ class App extends React.Component
 				error: "Please enter your location",
 			})
 		}
-
 	}
 
 	render()
@@ -85,8 +81,6 @@ class App extends React.Component
 			currentBG = `url(${NightIMG})`;
 			titleTextColor = `#fff`;
 		}
-
-		//console.log(currentBG);
 
 		return(
 			<div className="wrapper">
