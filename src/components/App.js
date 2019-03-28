@@ -73,13 +73,17 @@ class App extends React.Component
 		let titleTextColor;
 		let currentBG;
 
+		let currentHighlight;
+
 		if (currentHour < 19)
 		{
 			currentBG = `url(${DayIMG})`;
-			titleTextColor = `#000`;
+			titleTextColor = `#ffcc00`;
+			currentHighlight = `#ffcc00`;
 		} else {
 			currentBG = `url(${NightIMG})`;
 			titleTextColor = `#fff`;
+			currentHighlight = `#f3f3f3`;
 		}
 
 		return(
@@ -90,7 +94,7 @@ class App extends React.Component
 					</div>						
 					
 					<div className="col-12 col-md-5 col-lg-5 form-container">
-						<Form getWeather={this.getWeather} />
+						<Form getWeather={this.getWeather} highlight={ `${currentHighlight}` } />
 						<Weather 
 							temperature={this.state.tempature} 
 							city={this.state.city}
@@ -99,6 +103,7 @@ class App extends React.Component
 							description={this.state.description}
 							icon={this.state.icon}
 							error={this.state.error}
+							highlight={ currentHighlight}
 						/>
 					</div>
 				</div>

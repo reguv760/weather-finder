@@ -38,9 +38,14 @@
     letter-spacing: 0.1em;
     font-size: 1rem;
     cursor: pointer;
-    background-color: $hotOrange;
+    background-color: $subtleBlack;
     color: #fff;
     font-weight: 100;
+  }
+
+  & button:hover {
+    background-color: $yellow;
+    color: $subtleBlack;
   }
 
   & button:active {
