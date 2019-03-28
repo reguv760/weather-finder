@@ -1,4 +1,7 @@
 import React from 'react';
+import DotEnv from 'dotenv';
+
+
 import Titles from './Titles';
 import Form from './Form';
 import Weather from './Weather';
@@ -6,7 +9,7 @@ import Weather from './Weather';
 import DayIMG from './../img/daytime.jpg';
 import NightIMG from './../img/nighttime.jpg';
 
-const API_KEY ="b231f5b35c36c9a43ede24332afda924";
+//const API_KEY ="b231f5b35c36c9a43ede24332afda924";
 
 
 class App extends React.Component
@@ -21,6 +24,11 @@ class App extends React.Component
 
 	}
 
+	componentDidMount = () =>
+	{
+		DotEnv.config();
+	}
+
 	getWeather = async (e) =>
 	{
 		e.preventDefault();
@@ -32,7 +40,7 @@ class App extends React.Component
 		const country = e.target.elements.country.value;
 
 		// call api with api_key
-		const api_call = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}`);
+		const api_call = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${process.env.REACT_APP_API_KEY}`);
 
 		// retrieve data after making an api call
 		const data = await api_call.json();
