@@ -70,6 +70,8 @@ class App extends React.Component
 	render()
 	{	
 		const currentHour = new Date().getHours();
+		//const currentTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
 		let titleTextColor;
 		let currentBG;
 

@@ -2,6 +2,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Based on Weather Finder Youtube tutorial by [Hamza Mirza](https://www.youtube.com/watch?v=204C9yNeOYI)
 
+Demo located at: [http://reguv760.github.io/weather-finder/](http://reguv760.github.io/weather-finder/).
+
 ## Features
 
 **Bootstrap4** is a CSS library for responsive layouts.<br>
@@ -13,6 +15,8 @@ Based on Weather Finder Youtube tutorial by [Hamza Mirza](https://www.youtube.co
 #### `npm install dovenv`
 
 **gh-pages** is a devDependency which builds and publishes website then deploys to your GitHub repo as a seperate branch. Configure URL location under Settings > GitHub Pages > Source: gh-pages branch
+
+- Image Background and color highlight changes depending on user's current time.
 
 #### `npm install gh-pages --save-dev`
 
